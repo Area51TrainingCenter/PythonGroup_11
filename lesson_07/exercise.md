@@ -1,6 +1,6 @@
-#Exercise#
+# Ejercicio #
 
-##Pila##
+## Pila ##
 
 Una [pila](https://es.wikipedia.org/wiki/Pila_(inform%C3%A1tica)) en informática es una estructura de datos que 
 permite coleccionar elementos y define una serie de comportamientos.
