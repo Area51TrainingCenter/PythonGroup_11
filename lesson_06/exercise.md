@@ -1,6 +1,6 @@
-# Exercise #
+# Ejercicio #
 
-##Cipher##
+## Cipher ##
 
 Debes construir una clase llamada Cipher con la finalidad de desencriptar mensajes nazis ocultos, por ejemplo:
 
