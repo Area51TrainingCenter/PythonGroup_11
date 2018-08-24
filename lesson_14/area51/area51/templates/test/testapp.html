@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> DJANGO TEST </title>
+</head>
+
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for dev in devs %}
+                <tr>
+                    <th> {{ forloop.counter }} </th>
+                    <td> {{ dev.id }} </td>
+                    <td> {{ dev.name }} </td>
+                    <td> {{ dev.lastname | upper }} </td>
+                    <td> {{ dev.email }} </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

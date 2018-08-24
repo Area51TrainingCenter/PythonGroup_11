@@ -1,0 +1,12 @@
+<p>Estas buscado: <strong>{{ query }}</strong></p>
+{% if devs %}
+    <p>Programadores encontrados: {{ devs | length }}.</p>
+    <ul>
+    {% for dev in devs %}
+        <li>{{ dev.name }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Ningúnprogramador coincide con el criterio de búsqueda .</p>
+{% endif %}
+
