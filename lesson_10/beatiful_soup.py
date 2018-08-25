@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 req = requests.get('https://en.wikipedia.org/wiki/Python_(programming_language)')
 soup = BeautifulSoup(req.text, "lxml")
-
+#print(soup)
 # object BeatifulSoup
 print('Tipo: {}\nEstructura: {}'.format(type(soup), dir(soup)))
 
@@ -28,11 +28,13 @@ for h2 in soup.find_all('h2'):
     print(h2.text)
 
 print(soup.p.a)
-print(soup.p.find_all('a'))
+#print(soup.p.find_all('a'))
 
-print(soup.p.contents)
-print(soup.p.contents[6])
-print(soup.p.children)
+#print(soup.p.contents)
+#print(soup.p.contents[6])
+
+print(list(soup.p.children))
+
 for child in soup.p.children:
     print(child.name)
 
