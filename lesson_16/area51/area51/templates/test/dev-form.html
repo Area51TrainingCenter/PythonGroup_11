@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title> Crear Programador </title>
+    </head>
+    <body>
+        <h1>Crear programador </h1>
+    {% if form.errors %}
+        <p style="color: red"> Corrige lo siguiente: </p>
+    {% endif %}
+        <form action="" method="post">{% csrf_token %}
+            <table>
+                {{form.as_table}}
+            </table>
+            <input type="submit" value="Enviar">
+        </form>
+    </body>
+</html>
+

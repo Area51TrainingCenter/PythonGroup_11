@@ -1,3 +1,7 @@
 .ipynb_checkpoints
 .idea
 __pycache__
+*.log
+*.pot
+*.pyc
+.DS_Store

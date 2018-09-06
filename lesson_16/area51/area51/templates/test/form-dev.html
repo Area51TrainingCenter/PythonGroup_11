@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title> Crear Programador </title>
+    </head>
+    <body>
+        <h1>Crear programador </h1>
+    {% if errors %}
+        <ul style="color: red">
+        {% for error in errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+        <form action="" method="post">{% csrf_token %}
+            <p>Nombre: <input type= "text" name="name" value="{{name}}"></p>
+            <p>Apellido: <input name="lastname" value="{{lastname}}"></input></p>
+            <p>Email: <input type= "text" name="email" value="{{email}}"></p>
+            <input type="submit" value="Enviar">
+        </form>
+    </body>
+</html>
+
