@@ -16,14 +16,6 @@
   </div>
 </div>
 
-{% if  error %}
-        <ul>
-            {% for errors in error%}
-            <li style="color:red;">{{errors}}</li>
-            {%endfor%}
-        </ul>
-{%endif%}
-
 
     <form action="" method="get">
       <div class="col-lg-6">
@@ -35,5 +27,13 @@
         </div>
       </div>
     </form>
+
+    {% if  errors %}
+        <ul>
+            {% for error in errors%}
+            <li style="color:red;"> {{errors}} </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 </body>
 </html>
