@@ -17,4 +17,4 @@ print(json.loads(data))
 
 d = json.loads('[null, true, false, "string", 1, 2, 0]')
 print(d)
-
+print(type(d))

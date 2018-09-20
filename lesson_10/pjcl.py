@@ -35,13 +35,13 @@ r = sess.get('https://civil.pjud.cl/CIVILPORWEB/AtPublicoViewAccion.do?tipoMenuA
 #r = sess.post(url_1, data=body, cookies=cookies)
 r = sess.post(url_1, data=body)
 
-print(r)
-print(r.history)
-print(r.status_code)
-print(dir(r))
+#print(r)
+#print(r.history)
+#print(r.status_code)
+#print(dir(r))
 
 html_1 = r.text
-#print(html_1)
+print(html_1)
 
 links = re.findall("<a href='(/CIVIL.+)'", html_1)
 

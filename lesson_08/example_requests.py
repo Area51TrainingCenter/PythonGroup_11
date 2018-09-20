@@ -1,15 +1,15 @@
 import requests
 
-r = requests.get('http://api.github.com/events')
-print(dir(r))
-print(r.headers)
-print(r.encoding)
-print(r.text) # text return str type
-print(r.json()) # json() parse text to dict type, if is possible
-print(r.history) # redirect http to https
+#r = requests.get('http://api.github.com/events')
+#print(dir(r))
+#print(r.headers)
+#print(r.encoding)
+#print(r.text) # text return str type
+#print(r.json()) # json() parse text to dict type, if is possible#
+#print(r.history) # redirect http to http#
 
-r = requests.get('https://api.github.com/events')
-print(r.history) # not redirect
+#r = requests.get('https://api.github.com/events')
+#print(r.history) # not redirect
 
 r = requests.get('http://httpbin.org/get', params={'id': 1, 'name': 'carlos'})
 print(r, r.url)
