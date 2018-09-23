@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Bootstrap Theme Company Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  .jumbotron {
+      background-color: #f4511e;
+      color: #fff;
+  }
+  </style>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Area51</h1>
+  <p>Git Hub Organizations</p>
+
+  <form action="{% url 'organization:index' %}"  method="get"  class="form-inline">
+    <div class="form-group">
+        {{form.organization}}
+      <div class="input-group-btn">
+        <button type="submit" class="btn btn-danger">Send</button>
+      </div>
+    </div>
+  </form>
+
+  {% if errors %}
+
+    <div id="errors">
+      {% for error in errors %}
+        <div class="alert alert-danger text-center" role="alert">{{error}}</div>
+      {% endfor %}
+    </div>
+
+  {% endif %}
+</div>
+
+  {% if errors|length == 0 and data_login %}
+
+ <div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-8">
+      <img src="{{data_login.avatar_url}}">
+    </div>
+    <div class="col-sm-2">
+      <h2>{{data_login.login}}</h2>
+      <h4>Numeros de Repositorios : {{data_login.public_repos}}</h4>
+      <a href="{% url 'organization:info' data_login.login %}" class="btn btn-danger">Visita tu Organizacion</a>
+    </div>
+  </div>
+</div>
+
+  {% endif %}
+
+</body>
+</html>

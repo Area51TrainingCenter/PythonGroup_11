@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title> Proyecto </title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
+     <style>
+  .body {
+      background-color: #f4511e;
+      color: #fff;
+  }
+  </style>
+</head>
+
+<body class="body">
+
+     <div>
+            <form action="{% url 'repository:index' data.login %}" method="get">
+
+               <div class="col-auto">
+                    <div class="form-group mb-0">
+                        {{form.fil}}
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="form-group mb-0">
+                        <button type="submit" class="btn btn-danger">Send</button>
+                    </div>
+
+                </div>
+
+
+            </form>
+        </div>
+
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Updated commit Date <span class="oi oi-elevator"></span></span> </th>
+                    <th scope="col">Created Date <span class="oi oi-elevator"></span> </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for repo in repositories %}
+                <tr>
+                    <th scope="row"> {{ forloop.counter }} </th>
+                    <td> {{ repo.id }} </td>
+                    <td> {{ repo.name }} </td>
+                    <td> {{ repo.updated_at }} </td>
+                    <td> {{ repo.created_at }} </td>
+                </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
+
+
+
